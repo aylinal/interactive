@@ -1,14 +1,33 @@
-#yazi{
-        background-color: greenyellow;
-     }
-
 body{
-        color: indianred;
+        color: #ffe9d4;
         font-family: "garamond";
         font-weight: lighter;
         font-stretch: normal;
         font-size: 16px;
 }
+
+    div.relative {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 0px solid #ffffff;
+}
+
+.bg{
+        position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+        } 
+
 h2{
         font-style: italic;
+}
+.sekil{
+        display: none;
+}
+h2:hover + .sekil{
+        display: inline;
 }
