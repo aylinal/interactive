@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 
+<div class="row">
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+
 <style>
 	div.relative {
   position: relative;
@@ -8,6 +13,19 @@
   height: 300px;
   border: 3px solid #ffffff;
 } 
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+}
 </style>
 
 <title>19 jan 1925</title>
@@ -16,12 +34,14 @@
 <br>
 <br>
 <br>
-<div id="2_1"; class="relative">
+<div id="2_1"; class="relative";>
 <h2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;19 jan 1925</h2>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
-	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i love you. infinitely and inexpressibly.i’ve woken up in the middle of &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; the night and here I am writing this. &nbsp; &nbsp; my love, my happiness.</p>
-	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V.</p>
+	   <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i love you. infinitely and inexpressibly.i’ve woken up in the middle of &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; the night and here I am writing this. &nbsp; &nbsp; my love, my happiness.</p>
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V.</p>
 <br><br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div>
+<div id="2_1img"; class="column">
 <img src="images/19jan1925.png" width="800">
 </div>
 

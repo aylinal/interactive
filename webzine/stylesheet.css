@@ -16,9 +16,15 @@ div.relative {
 
 body {
 	color: white;
+	font-family: "garamond";
  	font-weight: lighter;
   	font-stretch: normal;
   	font-size: 16px;
+}
+
+h2 {
+	font-size: 32px;
+	font-style: italic;
 }
 
 a { 
@@ -27,7 +33,12 @@ a {
 	font-style: italic;
 	text-decoration: underline;
 }
+
 a:visited {
  	text-decoration: none; 
  	color: white;
+}
+
+a:hover {
+	background-color: #98c185;
 }
