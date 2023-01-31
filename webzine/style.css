@@ -29,5 +29,7 @@ h2{
         display: none;
 }
 h2:hover + .sekil{
+        position: absolute;
+        left: 300px;
         display: inline;
 }
