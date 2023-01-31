@@ -6,7 +6,7 @@ body{
         font-size: 16px;
 }
 
-    div.relative {
+div.relative {
   position: relative;
   width: 300px;
   height: 300px;
@@ -25,11 +25,13 @@ body{
 h2{
         font-style: italic;
 }
+
 .sekil{
         display: none;
 }
+
 h2:hover + .sekil{
         position: absolute;
-        left: 300px;
+        left: 350px;
         display: inline;
 }
