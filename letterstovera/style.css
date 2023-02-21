@@ -1,10 +1,10 @@
 body{
 	  background-color: #5D4B87;
   	font-family: 'Comfortaa', serif;
-  	font-size: 28px;
+  	font-size: 26px;
   	color:#F84834;
   	text-align: justify;
-    margin: 0;
+    margin-left: 20px;
     padding: 0;
     display: flex;
     cursor: url(cursor.png), auto;
