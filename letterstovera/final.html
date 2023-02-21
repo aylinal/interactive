@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
@@ -8,7 +9,7 @@
 <body>
   <div class="container">
     <div class="about">
-    <p id="about" style="display: none;"> This is a small selection of letters written by Vladimir Nabokov to his wife Vera Nabokova. But should we have access to such private and personal writings?</p>
+    <p id="about" style="display: block;"> This is a small selection of letters written by Vladimir Nabokov to his wife Vera Nabokova. But should we have access to such private and personal writings?</p>
     </div>
     <div id="letters">
 	   <p id="birinci" style="display: none;"> Katyusha,<br>
@@ -55,76 +56,115 @@
         <div class="small-box" id="yeddi"><img src="images/8.png"></div>
       </div>
       </div>
+
 <script type="text/javascript">
+
+    var open = false;
+    var lastOpened = null;
 
     var haqqinda = document.getElementById("haqqinda");
     var about = document.getElementById("about");
     haqqinda.addEventListener("click", function() {
-      if (about.style.display === "none") {
-        about.style.display = "block";
-      } else {
-        about.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != about) {
+            lastOpened.style.display = "none";
+        }
+        if (about.style.display === "none") {
+            about.style.display = "block";
+            lastOpened = about;
+        } else {
+            about.style.display = "none";
+            lastOpened = null;
+        }
     });
-    
+
     var bir = document.getElementById("bir");
     var birinci = document.getElementById("birinci");
     bir.addEventListener("click", function() {
-      if (birinci.style.display === "none") {
-        birinci.style.display = "block";
-      } else {
-        birinci.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != birinci) {
+            lastOpened.style.display = "none";
+        }
+        if (birinci.style.display === "none") {
+            birinci.style.display = "block";
+            lastOpened = birinci;
+        } else {
+            birinci.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     var iki = document.getElementById("iki");
     var ikinci = document.getElementById("ikinci");
     iki.addEventListener("click", function() {
-      if (ikinci.style.display === "none") {
-        ikinci.style.display = "block";
-      } else {
-        ikinci.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != ikinci) {
+            lastOpened.style.display = "none";
+        }
+        if (ikinci.style.display === "none") {
+            ikinci.style.display = "block";
+            lastOpened = ikinci;
+        } else {
+            ikinci.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     var uc = document.getElementById("uc");
     var ucuncu = document.getElementById("ucuncu");
     uc.addEventListener("click", function() {
-      if (ucuncu.style.display === "none") {
-        ucuncu.style.display = "block";
-      } else {
-        ucuncu.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != ucuncu) {
+            lastOpened.style.display = "none";
+        }
+        if (ucuncu.style.display === "none") {
+            ucuncu.style.display = "block";
+            lastOpened = ucuncu;
+        } else {
+            ucuncu.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     var dord = document.getElementById("dord");
     var dorduncu = document.getElementById("dorduncu");
     dord.addEventListener("click", function() {
-      if (dorduncu.style.display === "none") {
-        dorduncu.style.display = "block";
-      } else {
-        dorduncu.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != dorduncu) {
+            lastOpened.style.display = "none";
+        }
+        if (dorduncu.style.display === "none") {
+            dorduncu.style.display = "block";
+            lastOpened = dorduncu;
+        } else {
+            dorduncu.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     var bes = document.getElementById("bes");
     var besinci = document.getElementById("besinci");
     bes.addEventListener("click", function() {
-      if (besinci.style.display === "none") {
-        besinci.style.display = "block";
-      } else {
-        besinci.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != besinci) {
+            lastOpened.style.display = "none";
+        }
+        if (besinci.style.display === "none") {
+            besinci.style.display = "block";
+            lastOpened = besinci;
+        } else {
+            besinci.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     var alti = document.getElementById("alti");
     var altinci = document.getElementById("altinci");
     alti.addEventListener("click", function() {
-      if (altinci.style.display === "none") {
-        altinci.style.display = "block";
-      } else {
-        altinci.style.display = "none";
-      }
+        if (lastOpened != null && lastOpened != altinci) {
+            lastOpened.style.display = "none";
+        }
+        if (altinci.style.display === "none") {
+            altinci.style.display = "block";
+            lastOpened = altinci;
+        } else {
+            altinci.style.display = "none";
+            lastOpened = null;
+        }
     });
 
     const paragraph = document.getElementById('birinci');
@@ -176,6 +216,7 @@
 
       lastGroupColors = groupColors;
     }, 1000);
+    
 </script>
 
 </body>
