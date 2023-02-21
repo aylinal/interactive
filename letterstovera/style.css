@@ -42,33 +42,14 @@ body{
         transition: 1s ease;
       }
       .small-box:hover {
-        webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-        transform: scale(1.5);
-        transition: 1s ease;
+        animation: rotation 2s infinite linear;
       }
-
-
-.bir{
-  animation: color-animation 4s linear infinite;
-  --color-1: #F84834;
-  --color-2: #5D4B87;
-}
-.iki{
-  animation: color-animation 4s linear infinite;
-  --color-1: #5D4B87;
-  --color-2: #F84834;
-}
-@keyframes color-animation {
-  0%    {color: var(--color-1)}
-  25%   {color: var(--color-1)}
-  30%   {color: var(--color-2)}
-  45%   {color: var(--color-2)}
-  55%   {color: var(--color-1)}
-  60%   {color: var(--color-1)}
-  75%	{color: var(--color-2)}
-  85%	{color: var(--color-2)}
-  95%	{color: var(--color-1)}
-  100%  {color: var(--color-1)}
-}
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
 
