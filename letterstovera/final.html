@@ -17,7 +17,7 @@
         Vera Nabokova. But should we have access to such private and personal writings?</p>
     </div>
     <div id="letters">
-      <p id="birinci" style="display: none;"> Katyusha,<br>
+      <p class="letters"id="birinci" style="display: none;"> Katyusha,<br>
         After finishing the letter to you, I went out to post it, stopped in at the clock shop (turns out that they
         still can’t tell me how much the repairs will cost!), then bought a razor, then acquired a stamp collection for
         two marks – ten tens and five twenties – and on top of that, from a stand, two English books for fifty
@@ -29,7 +29,7 @@
         or rather composing it till sleep comes. My joy, Katyushen’ka, my little music, my love. Todtmoos is cosy, isn’t
         it? We stayed at the Adler inn there. Good night, Katyushen’ka.</p>
 
-      <p id="ikinci" style="display: none;"> My sweet,
+      <p class="letters" id="ikinci" style="display: none;"> My sweet,
         I dreamt that I was walking along the Palace Embankment with someone, the water in the Neva is lead-coloured,
         flowing thickly, and there are masts, masts without end, large boats and small ones, colourful stripes on black
         pipes – and I say to my companion: ‘The Bolsheviks have such a big fleet!’ And he replies: ‘Yes, that’s why they
@@ -42,7 +42,7 @@
         you are now (where you’ll be reading this letter). I love you. My sweet, I love you. Do you hear?
       </p>
 
-      <p id="ucuncu" style="display: none;">
+      <p class="letters" id="ucuncu" style="display: none;">
         My love, my darling, the last days in Paris were dedicated mostly to arranging my French evening. Ergaz (who has
         filled out a little and divorced her husband) took to this very actively and introduced me to the lady (S.
         Ridel) at whose home it will all take place (the little hall has room for 80). And there are also great hopes of
@@ -55,7 +55,7 @@
         suit. But I could have left the blue jacket behind. I love you madly and miss you madly.
       </p>
 
-      <p id="dorduncu" style="display: none;">
+      <p class="letters" id="dorduncu" style="display: none;">
         My love, my angel, congratulations: 14 years! One more week, and I will kiss you, my tenderness. Today, when I
         got up, I suddenly felt like dropping everything and coming back – especially since Gleb tells me sourly that
         the English evening at Mme Shklovsky’s won’t give me more than 3 pounds (however, I’ll take my own measures
@@ -67,7 +67,7 @@
         them and then to appear there in person. Struve is even more unreliable than Klamm’s messenger.
         Yellow-blue bus, I love you. I adore you.
       </p>
-      <p id="besinci" style="display: none;">
+      <p class="letters" id="besinci" style="display: none;">
         My love, why don’t you write to me? The little laddie isn’t sick, is he? You can always write a couple of words.
         Pas gentil. We should now have enough money for everything – not to mention one more source of help starting to
         take shape. Has there been anything from E. K.?; I will be writing to her on Friday after my meeting with
@@ -80,14 +80,14 @@
         MY DARLING, I ADORE AND EMBRACE YOU. HOW’S THE CAPTAIN?
       </p>
 
-      <p id="altinci" style="display:none;">
+      <p class="letters" id="altinci" style="display:none;">
         My dear love,
         I had lunch at the Gubskys’ yesterday, then sat in their tiny garden in the sun – the grapevine, having wound around the wall with its own hands, went off across the fence to the neighbours and will never return. I tried Gubsky about translations, he promised ‘to do what he can’, but hopes and plans are also capable of going off like vines. My love and my darling, of course, I’m very happy for Mother’s sake if you go to Czechoslovakia after all. Good luck, my darling. But you know what, tell me in your next letter the doctor’s diagnosis, in detail. I can imagine how exhausted you are, my darling, and how overstrung, but believe me, you will get much better over summer and you’ll get a good rest.
         My darling, I love you, I love you, I love you! I kiss my ‘person’, my little one ... I will get rid of all the conférences by May fifth. On the eighth, we will meet in Toulon. How green everything is here, how warm, what grey pants I have from London for seven and sixpence!
         I love you, my only happiness.
       </p>
 
-      <p id="yeddinci" style="display:none;">
+      <p class="letters" id="yeddinci" style="display:none;">
         My love, I’ve been so overburdened with work and errands today that I’ll have time to write you only a few words. I’ve spoken about Rostik to many people, but it is impossible in many cases to mix these two plans, i.e. searching simultaneously for a job, etc., and asking to settle a nephew. Two people told me: ‘Set up your son first’. In any case the question of our (first my, then your) move here has been settled. Mme Tsetlin promises to find the £100 needed for the first three months. I’ve just finished my translation and am taking it to Mme Chernavin tomorrow; Collins is tomorrow as well. No later than the 25th, my joy, remember! Or I’ll go alone (Oh? So. Please – you can go completely on your own …) I am kidding, my dear happiness, and I love you very very much.
         AND YOU, MY DARLING, MEET ME AT THE STATION ON WEDNESDAY AT FIVE FORTY-FIVE.
       </p>
@@ -126,8 +126,69 @@
         text.style.display = 'none';
       }
     }
-    const paragraph = document.getElementById('birinci');
-    const words = paragraph.innerHTML.split(' ');
+
+    //words change colors
+    // const paragraph = document.getElementById('birinci');
+    // const words = paragraph.innerHTML.split(' ');
+
+    // // Helper function to group the words into random groups
+    // const groupWords = () => {
+    //   const groupSizes = [100, 101, 102];
+    //   const numGroups = groupSizes.length;
+    //   const groups = [];
+
+    //   for (let i = 0; i < numGroups; i++) {
+    //     const group = [];
+
+    //     while (group.length < groupSizes[i]) {
+    //       const index = Math.floor(Math.random() * words.length);
+    //       if (!group.includes(index)) {
+    //         group.push(index);
+    //       }
+    //     }
+
+    //     groups.push(group);
+    //   }
+
+    //   return groups;
+    // };
+
+    // let lastGroupColors = ['#5D4B87', '#F84834', '#F84834'];
+
+    // setInterval(() => {
+    //   let groupColors = lastGroupColors.slice(); // Make a copy of the previous colors
+    //   const firstColorIndex = Math.floor(Math.random() * 2);
+    //   const secondColorIndex = firstColorIndex === 0 ? 1 : 0;
+
+    //   groupColors[firstColorIndex] = '#F84834';
+    //   groupColors[2] = '#5D4B87';
+
+    //   const groups = groupWords();
+    //   const newWords = words.map((word, index) => {
+    //     for (let i = 0; i < groups.length; i++) {
+    //       if (groups[i].includes(index)) {
+    //         return `<span style="color: ${groupColors[i]}">${word}</span>`;
+    //       }
+    //     }
+    //     return word;
+    //   });
+
+    //   paragraph.innerHTML = newWords.join(' ');
+
+    //   lastGroupColors = groupColors;
+    // }, 1000);
+
+
+    // refactor to go through all paragraphs
+    const paragraphs_by_class = document.getElementsByClassName('letters');
+    console.log(paragraphs_by_class);
+
+    var counter = 0;
+
+    while (counter <= paragraphs_by_class.length) {
+      // code to execute
+      const paragraph = paragraphs_by_class[counter];
+      const words = paragraph.innerHTML.split(' ');
 
     // Helper function to group the words into random groups
     const groupWords = () => {
@@ -175,6 +236,11 @@
 
       lastGroupColors = groupColors;
     }, 1000);
+
+      counter++;
+    }
+
+
   </script>
 
 </body>
