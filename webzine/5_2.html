@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+   
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="images/icon.png"/>
+<link rel="stylesheet" href="style.css">
+<img src="images/bg.webp"; width="100%"; height="100%"; class="bg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville">
+<title>29 aug 1925</title>
+
+<div id="2_2"; class="relative">
+	<h2 onclick="onDateClick()"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29 aug 1925</h2>
+	<img src="images/29aug1925.png" id="sekil">
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hello, poochums,
+	i am writing to you &nbsp; &nbsp; &nbsp;&nbsp;from the shore of the titisee, where we &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;are now sucking on chocolate ice. we’ll &nbsp; &nbsp; &nbsp;&nbsp;spend the night here and tomorrow climb up  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;feldberg. we had a wonderful time  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;today swimming and lying in the heat. i love you. very much. we passed through <span title="Inscription over the image on the picture side of the postcard, a photograph of a steam locomotive crossing the well-known railway bridge Ravennaviadukt across the Black Forest valley of Höllental. There is a caption at the bottom of the card: ‘Höllental — bad. Schwarzwald. Ravennaviadukt’."><b>here</b>.</span> <br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;i love you. i adore you very much. my joy. my dear love.</p>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V.</p>
+	<br><br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+<script>
+      let sekil = document.getElementById("sekil");
+      let posX1 = 0, posY1 = 0, posX2 = 0, posY2 = 0;
+
+      function onDateClick() {
+          if (sekil.style.display == "") {
+            sekil.style.display = computedStyle(sekil, "display");
+          }
+
+          if (sekil.style.display == "inline") {
+              sekil.style.display = "none";
+          } else if (sekil.style.display == "none") {
+              sekil.style.display = "inline";
+              sekil.onmousedown = onSekilMouseDown;
+          }
+      }
+
+      function onSekilMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          posX2 = e.clientX;
+          posY2 = e.clientY;
+
+          document.onmouseup = closeDragElement;
+          document.onmousemove = onMouseMove;
+      }
+
+      function onMouseMove(e) {
+          e = e || window.event;
+          e.preventDefault();
+
+          posX1 = posX2 - e.clientX;
+          posY1 = posY2 - e.clientY;
+          posX2 = e.clientX;
+          posY2 = e.clientY;
+
+          sekil.style.top = (sekil.offsetTop - posY1) + "px";
+          sekil.style.left = (sekil.offsetLeft - posX1) + "px";
+      }
+
+      function closeDragElement() {
+          document.onmouseup = null;
+          document.onmousemove = null;
+      }
+
+      var computedStyle = function (el, style) {
+          var cs;
+          if (typeof el.currentStyle != 'undefined') {
+              cs = el.currentStyle;
+          }
+          else {
+              cs = document.defaultView.getComputedStyle(el, null);
+          }
+          return cs[style];
+      }
+    </script>
+</div>
+</html>

@@ -1,0 +1,24 @@
+/*
+  1. with position: absolute
+  2. with position: relative
+  2. with grid
+    - rows: auto auto auto
+    - split apart wrapper-3
+*/
+.page {
+  border: 1px solid red;
+}
+
+.img-small,
+.caption {
+  width: 30%;
+}
+
+.img-large {
+  width: 60%;
+}
+
+.wrapper {
+  border: 1px solid blue;
+  margin: 1em;
+}

@@ -41,5 +41,6 @@ h2{
 
 h2:hover {
         background-color: #2458BD;
+        cursor: pointer;
 }
 

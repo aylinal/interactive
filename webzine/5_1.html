@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <img src="images/bg.webp" ; width="100%" ; height="100%" ; class="bg" />
+  <title>19 jan 1925</title>
+ 
+  <div id="par" ; class="relative">
+    <h2 onclick="onDateClick()">
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;19 jan 1925
+    </h2>
+    <img src="images/19jan1925.png" id="sekil" />
+    <p>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </p>
+    <p>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i love you. infinitely and
+      inexpressibly. &nbsp; &nbsp;&nbsp; i’ve woken up in the middle of the
+      night &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp; &nbsp; and here I am writing this. &nbsp; &nbsp; &nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; my love, my happiness.
+    </p>
+    <p>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V.
+    </p>
+    <br /><br /><br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <script>
+      let sekil = document.getElementById("sekil");
+      let posX1 = 0, posY1 = 0, posX2 = 0, posY2 = 0;
+
+      function onDateClick() {
+          if (sekil.style.display == "") {
+            sekil.style.display = computedStyle(sekil, "display");
+          }
+
+          if (sekil.style.display == "inline") {
+              sekil.style.display = "none";
+          } else if (sekil.style.display == "none") {
+              sekil.style.display = "inline";
+              sekil.onmousedown = onSekilMouseDown;
+          }
+      }
+
+      function onSekilMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          posX2 = e.clientX;
+          posY2 = e.clientY;
+
+          document.onmouseup = closeDragElement;
+          document.onmousemove = onMouseMove;
+      }
+
+      function onMouseMove(e) {
+          e = e || window.event;
+          e.preventDefault();
+
+          posX1 = posX2 - e.clientX;
+          posY1 = posY2 - e.clientY;
+          posX2 = e.clientX;
+          posY2 = e.clientY;
+
+          sekil.style.top = (sekil.offsetTop - posY1) + "px";
+          sekil.style.left = (sekil.offsetLeft - posX1) + "px";
+      }
+
+      function closeDragElement() {
+          document.onmouseup = null;
+          document.onmousemove = null;
+      }
+
+      var computedStyle = function (el, style) {
+          var cs;
+          if (typeof el.currentStyle != 'undefined') {
+              cs = el.currentStyle;
+          }
+          else {
+              cs = document.defaultView.getComputedStyle(el, null);
+          }
+          return cs[style];
+      }
+    </script>
+  </div>
+</html>
