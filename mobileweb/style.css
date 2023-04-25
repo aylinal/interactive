@@ -99,6 +99,16 @@ h3{
   border-radius: 5px;
 }
 
+textarea {
+  background-color: #BF5562;
+  border-radius: 5px;
+}
+
+input {
+  background-color: #BF5562;
+  border-radius: 5px;
+}
+
 .close {
   position: relative;
 /*  bottom: 1rem;*/
@@ -110,12 +120,14 @@ h3{
   font-family: "Newsreader", serif;
   font-style: italic;
   font-weight: 300;
+  color: white;
 }
 
 #name{
   font-family: "Newsreader", serif;
   font-style: italic;
   font-weight: 300;
+  color: white;
 }
 
 label{
@@ -153,57 +165,11 @@ p{
   margin-left: 2 rem;
   margin-right: 2 rem;
   margin-top: 1rem;
-/*  max-width: 50vw;*/
-width: 50vw;
-height: 60vh;
+  width: 50vw;
+  height: 60vh;
 }
 
-.hersey {
-/*  height: 100vh;
-  width: 100vw;*/
-}
-/*.flowers img {
-  grid-row: span 2;
-  grid-column: span 2;
-  cursor: pointer;
-  margin: 10px;
-}*/
 
-/*.flowers img:nth-child(2n+1) {
-  grid-column: 1 / span 2;
-}
-
-.flowers img:nth-child(3n+1) {
-  grid-column: 3 / span 2;
-}
-
-.flowers img:nth-child(4n+1) {
-  grid-row: span 3;
-  grid-column: 5 / span 2;
-}
-
-.flowers img:nth-child(5n+1) {
-  grid-column: 1 / span 3;
-}
-
-.flowers img:nth-child(6n+1) {
-  grid-column: 4 / span 2;
-}
-
-.flowers img:nth-child(7n+1) {
-  grid-row: span 2;
-  grid-column: 1 / span 2;
-}
-
-.flowers img:nth-child(8n+1) {
-  grid-column: 3 / span 2;
-}
-
-.flowers img:nth-child(9n+1) {
-  grid-row: span 2;
-  grid-column: 5 / span 2;
-}*/
-.
 /*@media screen and (max-width: 767px) {*/
 /*  h2 {*/
 /*    margin-top: 1rem;*/

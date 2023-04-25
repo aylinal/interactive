@@ -39,34 +39,42 @@
         </div>
     </div>
 
+    <footer>
+     <a href="fatima.html"><p>home</p></a>
+   </footer>
+
+   <script src="airtable.browser.js"></script>
      <script>
         var popup = document.querySelector('.popup');
+
+        var selectedImage;
 
         // Add event listeners to each image
         var images = document.querySelectorAll('.flowers img');
         images.forEach(function(img) {
-        img.addEventListener('click', function(event) {
-        // Store the clicked image in a variable
-        var selectedImage = event.target.src;
-        showModal(selectedImage);
+          img.addEventListener('click', function(event) {
+            // Store the clicked image in a variable
+            selectedImage = event.target.src;
+            console.log(selectedImage);
+            showModal(selectedImage);
+          });
         });
-      });
 
       function showModal(selectedImage) {
-      // Get the modal and button elements
-      var modal = document.getElementById('myModal');
-      var button = document.getElementById('sendButton');
+        // Get the modal and button elements
+        var modal = document.getElementById('myModal');
+        var button = document.getElementById('sendButton');
 
-      // Set the button text to the selected image
-      button.textContent = '';
-      var img = document.createElement('img');
-      img.src = selectedImage;
-      img.alt = 'Selected image';
-      button.appendChild(img);
+        // Display the modal
+        modal.style.display = "block";
 
-      // Display the modal
-      modal.style.display = "block";
-    }
+        // Set the button text to the selected image
+        // button.textContent = '';
+        // var img = document.createElement('img');
+        // img.src = selectedImage;
+        // img.alt = 'Selected image';
+        // button.appendChild(img);
+      }
 
 
 
@@ -88,7 +96,5 @@
     </script>
  </body>
 
- <footer>
-   <a href="fatima.html"><p>home</p></a>
- </footer>
+ 
  </html>
