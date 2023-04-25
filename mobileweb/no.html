@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+
+<head>
+  <title>Fatima's Friends</title> 
+ </head>
+
+ <body>
+    <h2 class="yazi">Hi friend! <br> Send a flower to Fatima. :)</h2>
+    <div class="flowers">
+        <img src="1.png" onclick="showPopup()">
+        <img src="2.png" onclick="showPopup()">
+        <img src="3.png" onclick="showPopup()">
+        <img src="4.png" onclick="showPopup()">
+        <img src="5.png" onclick="showPopup()">
+        <img src="6.png" onclick="showPopup()">
+        <img src="7.png" onclick="showPopup()">
+        <img src="8.png" onclick="showPopup()">
+        <img src="9.png" onclick="showPopup()">
+        <img src="10.png" onclick="showPopup()">
+      </div>
+
+      <div class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <h3>Nice pick!</h3>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="note">Note:</label>
+                <textarea id="note" name="note"></textarea><br><br>
+                <button type="button" onclick="send()"  id="send">Send</button>
+            </form>
+        </div>
+    </div>
+
+     <script>
+        var popup = document.querySelector('.popup');
+
+        // Add event listeners to each image
+        var images = document.querySelectorAll('.flowers img');
+        images.forEach(function(img) {
+        img.addEventListener('click', function(event) {
+        // Store the clicked image in a variable
+        var selectedImage = event.target.src;
+        showModal(selectedImage);
+        });
+      });
+
+      function showModal(selectedImage) {
+      // Get the modal and button elements
+      var modal = document.getElementById('myModal');
+      var button = document.getElementById('sendButton');
+
+      // Set the button text to the selected image
+      button.textContent = '';
+      var img = document.createElement('img');
+      img.src = selectedImage;
+      img.alt = 'Selected image';
+      button.appendChild(img);
+
+      // Display the modal
+      modal.style.display = "block";
+    }
+
+
+
+        function showPopup() {
+            popup.style.display = 'flex';
+        }
+
+        function hidePopup() {
+            popup.style.display = 'none';
+        }
+
+        function send() {
+            var name = document.getElementById('name').value;
+            var note = document.getElementById('note').value;
+            console.log('Name:', name);
+            console.log('Note:', note);
+            hidePopup();
+        }
+    </script>
+ </body>
+
+ <footer>
+   <a href="fatima.html"><p>home</p></a>
+ </footer>
+ </html>

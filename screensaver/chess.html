@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Infinite Game</title>
+  
+  <style>
+    canvas {
+      display: block;
+      margin: auto;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script>
+    function setup() {
+
+      console.log("setup");
+
+      createCanvas(windowHeight, windowHeight/8*7);
+      
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          if ((i + j) % 2 === 0) {
+            fill("#BACC81");
+          } else {
+            fill("#478C5C");
+          }
+          rect(j * width/8, i * height/8, width/8, height/8);
+        }
+      }
+
+      drawKingPiece(0, 4, "#013A20", "#000000"); // 1st king
+      drawKingPiece(7, 4, "#ECF87F", "#81B622"); // 2nd king
+
+    }
+
+    function drawKingPiece(row, col, fillColor, crossColor) {
+
+      console.log("drawKingPiece");
+
+      let x = col * width/8 + width/16;
+      let y = row * height/8 + height/16;
+      let diameter = width/8;
+
+      push();
+      translate(x, y);
+      scale(diameter/100); 
+      fill(fillColor);
+      noStroke();
+      ellipse(0, 0, 80, 80);
+
+      fill(crossColor);
+      noStroke();
+      rect(-20, -10, 40, 20);
+      rect(-10, -20, 20, 40);
+
+      pop();
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

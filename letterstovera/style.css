@@ -40,6 +40,8 @@ body{
         max-height: 100%;
         object-fit: fill;
         transition: 1s ease;
+        -webkit-filter: drop-shadow(5px 5px 30px #800000);
+        filter: drop-shadow(2px 2px 25px #800000);
       }
       .small-box:hover {
         animation: rotation 2s infinite linear;
