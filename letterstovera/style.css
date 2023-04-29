@@ -1,7 +1,7 @@
 body{
 	  background-color: #5D4B87;
   	font-family: 'Comfortaa', serif;
-  	font-size: 26px;
+  	font-size: 20px;
   	color:#F84834;
   	text-align: justify;
     margin-left: 20px;
@@ -34,15 +34,25 @@ body{
         background-color: none;
         border: none;
         margin-top: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+
       .small-box img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 50%;
+        max-height: 50%;
         object-fit: fill;
         transition: 1s ease;
-        -webkit-filter: drop-shadow(5px 5px 30px #800000);
-        filter: drop-shadow(2px 2px 25px #800000);
+        -webkit-filter: drop-shadow(5px 5px 10px #800000);
+        filter: drop-shadow(2px 2px 10px #800000);
       }
+      .small-box img:onclick
+
+      #haqqinda img{
+      max-width: 100%;
+      max-height: 100%;
+    }
       .small-box:hover {
         animation: rotation 2s infinite linear;
       }

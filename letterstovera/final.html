@@ -92,14 +92,14 @@
   </div>
   <div class="container">
     <div class="small-boxes">
-      <div class="small-box" id="haqqinda"> <img src="images/6.png" onclick="showParagraph('haqqinda', 'about')"> </div>
-      <div class="small-box" id="bir"><img src="images/2.png" onclick="showParagraph('bir', 'birinci')"></div>
-      <div class="small-box" id="iki"><img src="images/3.png" onclick="showParagraph('iki', 'ikinci')"></div>
-      <div class="small-box" id="uc"><img src="images/4.png" onclick="showParagraph('uc', 'ucuncu')"></div>
-      <div class="small-box" id="dord"><img src="images/5.png" onclick="showParagraph('dors', 'dorduncu')"></a></div>
-      <div class="small-box" id="bes"><img src="images/1.png" onclick="showParagraph('bes', 'besinci')"></div>
-      <div class="small-box" id="alti"><img src="images/7.png" onclick="showParagraph('alti', 'altinci')"></div>
-      <div class="small-box" id="yeddi"><img src="images/8.png" onclick="showParagraph('yeddi', 'yeddinci')"></div>
+      <div class="small-box" id="haqqinda"> <img src="images/11.png" onclick="showParagraph('haqqinda', 'about')"> </div>
+      <div class="small-box" id="bir"><img src="images/22.png" onclick="showParagraph('bir', 'birinci')"></div>
+      <div class="small-box" id="iki"><img src="images/33.png" onclick="showParagraph('iki', 'ikinci')"></div>
+      <div class="small-box" id="uc"><img src="images/44.png" onclick="showParagraph('uc', 'ucuncu')"></div>
+      <div class="small-box" id="dord"><img src="images/55.png" onclick="showParagraph('dors', 'dorduncu')"></a></div>
+      <div class="small-box" id="bes"><img src="images/66.png" onclick="showParagraph('bes', 'besinci')"></div>
+     <!--  <div class="small-box" id="alti"><img src="images/7.png" onclick="showParagraph('alti', 'altinci')"></div>
+      <div class="small-box" id="yeddi"><img src="images/8.png" onclick="showParagraph('yeddi', 'yeddinci')"></div> -->
     </div>
   </div>
   <script type="text/javascript">
@@ -108,6 +108,16 @@
       var img = document.getElementById(imgId);
       var text = document.getElementById(textId);
       
+      function showImage(boxId) {
+      // Add active class to the clicked box
+      document.getElementById(boxId).classList.add('active');
+
+      // Apply the drop shadow filter to the clicked image
+      var img = document.getElementById(boxId).getElementsByTagName('img')[0];
+      img.style.webkitFilter = 'drop-shadow(5px 5px 10px #F9E64E)';
+      img.style.filter = 'drop-shadow(2px 2px 10px #F9E64E)';
+    }
+
       // Hide all paragraphs except for the one that corresponds to the clicked image
       var paragraphs = document.getElementsByTagName('p');
       console.log(paragraphs);
