@@ -44,10 +44,9 @@ body{
         max-height: 50%;
         object-fit: fill;
         transition: 1s ease;
-        -webkit-filter: drop-shadow(5px 5px 10px #800000);
-        filter: drop-shadow(2px 2px 10px #800000);
+        -webkit-filter: drop-shadow(5px 5px 5px #800000);
+        filter: drop-shadow(2px 2px 5px #800000);
       }
-      .small-box img:onclick
 
       #haqqinda img{
       max-width: 100%;
