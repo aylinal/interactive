@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/airtable@0.11.6/lib/airtable.umd.min.js"></script>
 
 <head>
   <title>Fatima's Friends</title> 
@@ -34,7 +35,7 @@
                 <input type="text" id="name" name="name"><br><br>
                 <label for="note">Note:</label>
                 <textarea id="note" name="note"></textarea><br><br>
-                <button type="button" onclick="send()"  id="send">Send</button>
+                <button type="button" onclick="send()"  id="sendButton">Send</button>
             </form>
         </div>
     </div>
@@ -43,7 +44,11 @@
      <a href="fatima.html"><p>home</p></a>
    </footer>
 
-   <script src="airtable.browser.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/airtable@0.11.6/lib/airtable.umd.min.js"></script>
+
+
+
      <script>
         var popup = document.querySelector('.popup');
 
@@ -67,25 +72,38 @@
 
         // Display the modal
         modal.style.display = "block";
-
-        // Set the button text to the selected image
-        // button.textContent = '';
-        // var img = document.createElement('img');
-        // img.src = selectedImage;
-        // img.alt = 'Selected image';
-        // button.appendChild(img);
       }
 
 
+        // Send data to Airtable using Axios
+        axios.post('https://api.airtable.com/v0/appIHcFiArrefYhTE/Flowers', {
+          fields: {
+            Name: name,
+            Note: note,
+            Flowers: [{url: selectedImage}]
+          }
+        }, {
+          headers: {
+            'Authorization': 'Bearer key2mO7mZvq0vvHqA',
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+
+        hidePopup();
 
         function showPopup() {
-            popup.style.display = 'flex';
+        popup.style.display = 'flex';
         }
-
+      
         function hidePopup() {
             popup.style.display = 'none';
         }
-
         function send() {
             var name = document.getElementById('name').value;
             var note = document.getElementById('note').value;
@@ -93,8 +111,43 @@
             console.log('Note:', note);
             hidePopup();
         }
-    </script>
- </body>
+        function sendToAirtable() {
+        const BASE_ID = 'appIHcFiArrefYhTE';
+        const TABLE_NAME = 'SentForFatima';
+        const API_KEY = 'key2mO7mZvq0vvHqA';
 
+        const data = {
+          fields: {
+            Flowers: selectedImage,
+            Name: name,
+            Note: note
+          }
+        };
+
+        axios.post(`https://api.airtable.com/v0/${appIHcFiArrefYhTE}/${tbl6TnVsVR92nLqsL}`, data, {
+          headers: {
+            Authorization: `Bearer ${key2mO7mZvq0vvHqA}`,
+            'Content-Type': 'application/json'
+          }
+        })
+        
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
+      function send() {
+      name = document.getElementById('name').value;
+      note = document.getElementById('note').value;
+      sendToAirtable();
+      hidePopup();
+    }
+
+
+    </script>
+    </body>
  
- </html>
+ </html> 
