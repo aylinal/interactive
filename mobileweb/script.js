@@ -132,30 +132,6 @@ function set_up_modals() {
 
 }
 
-const axios = require('axios');
-
-const AIRTABLE_API_KEY = 'key2mO7mZvq0vvHqA';
-const BASE_ID = 'YOUR_BASE_ID';
-const TABLE_NAME = 'YOUR_TABLE_NAME';
-
-const data = {
-  fields: {
-    Name: 'John Doe',
-    Email: 'johndoe@example.com',
-    Message: 'Hello, world!'
-  }
-};
-
-axios.post(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, data, {
-  headers: {
-    'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-    'Content-Type': 'application/json'
-  }
-}).then(response => {
-  console.log(response.data);
-}).catch(error => {
-  console.log(error);
-});
 
 
 
