@@ -81,14 +81,20 @@ h3{
 
 .popup {
   position: absolute;
-/*  width: 50%;
-  height: 30%;*/
+  width: 30% vh;
+  height: 30%
   display: none;
   justify-content: center;
   align-items: center;
   border: 0.1rem solid #BF5562;
   border-radius: 5px;
-  color:#EBE9E5;
+  color:#BF5562;
+  background-color: #EBE9E5;
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
 
 }
   
@@ -97,6 +103,7 @@ h3{
   background-color: #EBE9E5;
   padding: 1rem;
   border-radius: 5px;
+
 }
 
 textarea {
@@ -170,9 +177,4 @@ p{
 }
 
 
-/*@media screen and (max-width: 767px) {*/
-/*  h2 {*/
-/*    margin-top: 1rem;*/
-/*  }*/
-/*}*/
 

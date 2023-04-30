@@ -3,7 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/airtable@0.11.6/lib/airtable.umd.min.js"></script>
 
 <head>
   <title>Fatima's Friends</title> 
@@ -29,13 +28,13 @@
       <div class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup()">&times;</span>
-            <h3>Nice pick!</h3>
+            <h3>Nice pick!</h3> <img id="chosen"src="">
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name"><br><br>
                 <label for="note">Note:</label>
                 <textarea id="note" name="note"></textarea><br><br>
-                <button type="button" onclick="send()"  id="sendButton">Send</button>
+                <button type="button"  id="sendButton">Send</button>
             </form>
         </div>
     </div>
@@ -46,10 +45,18 @@
 
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/airtable@0.11.6/lib/airtable.umd.min.js"></script>
-
+  <script src="airtable.browser.js"></script>
 
 
      <script>
+              function showPopup() {
+        popup.style.display = 'flex';
+        }
+      
+        function hidePopup() {
+            popup.style.display = 'none';
+        }
+
         var popup = document.querySelector('.popup');
 
         var selectedImage;
@@ -61,93 +68,48 @@
             // Store the clicked image in a variable
             selectedImage = event.target.src;
             console.log(selectedImage);
-            showModal(selectedImage);
+            document.getElementById('chosen').src = selectedImage
+            // showModal(selectedImage);
           });
         });
 
-      function showModal(selectedImage) {
-        // Get the modal and button elements
-        var modal = document.getElementById('myModal');
-        var button = document.getElementById('sendButton');
+// connect to your base; add your API key here as well.
+      var Airtable = require('airtable');
+      var base = new Airtable({ apiKey: 'key2mO7mZvq0vvHqA' }).base('appIHcFiArrefYhTE');
 
-        // Display the modal
-        modal.style.display = "block";
-      }
+      document.getElementById("sendButton").addEventListener("click", function(e) {
+     console.log("create_record");
 
+   // get the values from the form and store them in variables
+        var name = document.getElementById('name').value;
+        var note = document.getElementById('note').value;
 
-        // Send data to Airtable using Axios
-        axios.post('https://api.airtable.com/v0/appIHcFiArrefYhTE/Flowers', {
-          fields: {
-            Name: name,
-            Note: note,
-            Flowers: [{url: selectedImage}]
-          }
-        }, {
-          headers: {
-            'Authorization': 'Bearer key2mO7mZvq0vvHqA',
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+  // some validations (if you want... )
+      base('SentForFatima').create([{
+                  // in here, name your fileds the same as they are in airtable, and
+                  // use your variables.
+                  "fields": {
+                      "Flowers": selectedImage,
+                      "Name": name,
+                      "Note": note,
+                  }
+              }
+          ], function(err, records) {
+              if (err) {
+                  console.error(err);
+                  document.getElementById("submit-message").innerHTML = "Oh no, there was a problem... try again!";
+                  return;
+              }
+              // if form is submitted correctly, do this...
+              records.forEach(function(record) {
+                  console.log(record.getId());
+                 hidePopup();
+              });
+          });
+    
+});
 
-        hidePopup();
-
-        function showPopup() {
-        popup.style.display = 'flex';
-        }
-      
-        function hidePopup() {
-            popup.style.display = 'none';
-        }
-        function send() {
-            var name = document.getElementById('name').value;
-            var note = document.getElementById('note').value;
-            console.log('Name:', name);
-            console.log('Note:', note);
-            hidePopup();
-        }
-        function sendToAirtable() {
-        const BASE_ID = 'appIHcFiArrefYhTE';
-        const TABLE_NAME = 'SentForFatima';
-        const API_KEY = 'key2mO7mZvq0vvHqA';
-
-        const data = {
-          fields: {
-            Flowers: selectedImage,
-            Name: name,
-            Note: note
-          }
-        };
-
-        axios.post(`https://api.airtable.com/v0/${appIHcFiArrefYhTE}/${tbl6TnVsVR92nLqsL}`, data, {
-          headers: {
-            Authorization: `Bearer ${key2mO7mZvq0vvHqA}`,
-            'Content-Type': 'application/json'
-          }
-        })
-        
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
-
-      function send() {
-      name = document.getElementById('name').value;
-      note = document.getElementById('note').value;
-      sendToAirtable();
-      hidePopup();
-    }
-
-
-    </script>
-    </body>
+        </script>
+        </body>
  
  </html> 

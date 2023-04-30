@@ -11,27 +11,7 @@ Airtable.configure({
 
 var base = Airtable.base('appIHcFiArrefYhTE');
 
-// base('SentForFatima').select({
-//     fields: ['Flowers']
-// }).firstPage(function(err, records) {
-//     // if (err) {
-//     //     console.error(err);
-//     //     return;
-//     // };
 
-//     // Get the data from the first record in the table
-//     var record = records[0];
-    
-//     // Get the value of the "Flowers" column
-//     var flowers = record.get('Flowers');
-//     console.log(flowers);
-
-//     // Display the data on the website
-//     var flowersDiv = document.getElementById('flowers');
-//     flowersDiv.innerHTML = flowers;
-// });
-
-// set up a blank array for all your rows
 const rows = [];
 
 // this line of code says to get all the info from AirTable
@@ -91,12 +71,15 @@ function showRows() {
         var flowersImage = document.createElement("img");
         flowersImage.src = row.fields.Flowers;
         flowersImage.setAttribute("data-index", i);
+        flowersImage.classList.add('flower');
         document.getElementById("guller").appendChild(flowersImage);
+
         
 
         var popup = document.createElement("div");
         popup.classList.add("popup");
         popup.setAttribute("data-index", i);
+        popup.style.display = "none";
 
         var name = document.createElement("div");
         name.innerHTML = row.fields.Name;
@@ -115,22 +98,62 @@ function showRows() {
     })
 }
 
-function set_up_modals() {
+    
 
-    console.log("set_up_modals");
+    function close_popup(event) {
+    // Check if the clicked target is not a flower
+    if (!event.target.classList.contains('flower')) {
+        var popups = document.getElementsByClassName('popup');
 
-    var images = document.querySelectorAll('img');
-
-    console.log(images);
-
-    // images.forEach(function(img) {
-    //   img.addEventListener('click', function(event) {
-    //     console.log("clicked!!");
-    //     // console.log(event.target.getAttribute("data-index"));
-    //   });
-    // });
-
+        // Iterate through popups and hide them
+        for (var i = 0; i < popups.length; i++) {
+            popups[i].style.display = 'none';
+        }
+    }
 }
+
+function stop_propagation(event) {
+    event.stopPropagation();
+}
+
+// click a flower, show the form...
+    var flowers = document.getElementsByClassName("flower");
+    console.log(flowers);
+    function show_details() {
+    console.log('show_details');
+    var index = event.target.getAttribute("data-index");
+     console.log("flower-index =" + index);
+
+    var popup = document.body.querySelector('.popup[data-index = "'+ index +'"]');
+    popup.style.display = "block";
+
+    }
+    // Add event listener to close popup when clicking outside
+document.addEventListener('click', close_popup, false);
+
+// Add event listener to stop propagation inside the popup
+var popups = document.getElementsByClassName('popup');
+for (var i = 0; i < popups.length; i++) {
+    popups[i].addEventListener('click', stop_propagation, false);
+}
+
+
+    // for (var i = 0; i < flowers.length; i++) {
+    // flowers[i].addEventListener('click', show_details, false);
+    // }
+    setTimeout( function() {
+    console.log("add event listener");
+    for (var i = 0; i < flowers.length; i++) {
+    flowers[i].addEventListener('click', show_details, false);
+    };
+    }, 1000);
+
+
+
+
+
+
+
 
 
 
