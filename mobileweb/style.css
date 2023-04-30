@@ -81,8 +81,6 @@ h3{
 
 .popup {
   position: absolute;
-  width: 30% vh;
-  height: 30%
   display: none;
   justify-content: center;
   align-items: center;
@@ -95,7 +93,9 @@ h3{
   font-weight: 300;
   font-size: 1.5rem;
   text-align: center;
-
+   padding: 1rem; /* Add padding for better spacing */
+  box-sizing: border-box; /* To include padding and border in the width calculation */
+  max-width: 90%; /* To ensure the popup does not exceed the screen width */
 }
   
 .popup-content {
