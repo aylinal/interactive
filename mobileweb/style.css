@@ -109,6 +109,8 @@ h3{
 textarea {
   background-color: #BF5562;
   border-radius: 5px;
+    border-style: none; 
+    border-color: Transparent; 
 }
 
 input {
