@@ -117,7 +117,8 @@ input {
 }
 
 .close {
-  position: relative;
+  position: absolute;
+  margin-left: 1rem;
 /*  bottom: 1rem;*/
   cursor: pointer;
   color: #BF5562;
@@ -174,6 +175,11 @@ p{
   margin-top: 1rem;
   width: 50vw;
   height: 60vh;
+}
+
+#guller{
+  width: 30vw;
+  height: 40vh;
 }
 
 
