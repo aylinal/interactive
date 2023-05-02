@@ -1,0 +1,31 @@
+body{
+	background-color: #F0F8FF;
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://mdn.github.io/web-fonts/LatoReg.ttf");
+}
+
+p {
+  font-family: Lato, sans-serif;
+  text-align: center;
+}
+.posterler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.posterler img {
+  margin: 0 10px; /* optional: add some space between the images */
+}
+
+.nupogody{
+	  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
