@@ -1,0 +1,15 @@
+body{
+	background-color: #F0F8FF;
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://mdn.github.io/web-fonts/LatoReg.ttf");
+}
+
+p {
+  font-family: Lato, sans-serif;
+  text-align: center;
+}
