@@ -77,3 +77,21 @@ p {
   align-items: center;
   height: 100vh;
 }
+
+.words{
+  font-family: Lato, sans-serif;
+  text-align: center;
+}
+.merkez{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.merkez img{
+  margin-top: 10px;
+}
+
+
