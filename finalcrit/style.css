@@ -29,6 +29,9 @@ p {
   align-items: center;
   height: 100vh;
 }
+.nupogody img{
+	margin: 10px;
+}
 
 .ellissitzky{
   display: flex;
@@ -51,9 +54,26 @@ p {
 }
 
 .wordbook{
-	  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.wordbook img{
+	margin-left: 40px;
+}
+
+.woonibot {
+ display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+.keychains{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
