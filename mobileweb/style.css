@@ -120,8 +120,9 @@ input {
 
 .close {
   position: absolute;
-  margin-left: 1rem;
-/*  bottom: 1rem;*/
+  top: 0;
+  right: 0;
+  margin: 1rem;
   cursor: pointer;
   color: #BF5562;
 }
